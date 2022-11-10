@@ -1,0 +1,18 @@
+enum Genres {
+  drama,
+  romance,
+  comedy,
+  crime,
+  thriller,
+  family,
+  action,
+  fantasy,
+  adventure,
+  animation,
+  history,
+  horror,
+  war,
+  documentary,
+  musical,
+  sport,
+}
