@@ -1,19 +1,22 @@
 // ignore_for_file: avoid_print, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:movie_app/widgets/menu_buttons.dart';
 import 'package:movie_app/enums/gender.dart';
 import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/admin.dart';
 import 'package:movie_app/models/bases/person.dart';
 import 'package:movie_app/models/member.dart';
-import 'package:movie_app/screens/test_screen.dart';
+import 'package:movie_app/screens/admin/admin.dart';
+import 'package:movie_app/screens/member/member.dart';
+import 'package:movie_app/screens/movie/movie.dart';
+import 'package:movie_app/theme/theme.dart';
 
 void main() {
   runApp(const App());
 }
 
-const Color darkColor = Color.fromRGBO(13, 17, 23, 1);
-
+// const Color darkColor = Color.fromRGBO(13, 17, 23, 1);
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -22,14 +25,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Movie List",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.amber,
-          scaffoldBackgroundColor: darkColor,
-          textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: Colors.white,
-                displayColor: Colors.white,
-                decorationColor: Colors.white,
-              )),
+      theme: theme(context),
       home: const MovieApp(),
     );
   }
@@ -54,26 +50,51 @@ class _MovieAppState extends State<MovieApp> {
           ),
         ),
         title: const Text(
-          "Movie App",
+          "Movie List",
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const TestScreen()),
-              );
-            },
-            icon: const Icon(Icons.person),
-          )
-        ],
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      body: SafeArea(
+        child: Center(
           child: Column(
-            children: const <Widget>[
-              Text("Context"),
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <MenuButtons>[
+              MenuButtons(
+                cb: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AdminScreen(),
+                    ),
+                  );
+                },
+                icon: Icons.admin_panel_settings_outlined,
+                text: "Add Admin",
+              ),
+              MenuButtons(
+                cb: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MemberScreen(),
+                    ),
+                  );
+                },
+                icon: Icons.person_add,
+                text: "Add Member",
+              ),
+              MenuButtons(
+                cb: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MovieScreen(),
+                    ),
+                  );
+                },
+                icon: Icons.movie,
+                text: "Add Movie",
+              ),
             ],
           ),
         ),
