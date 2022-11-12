@@ -31,10 +31,13 @@ class _AdminWidgetState extends State<AdminWidget> {
   @override
   void initState() {
     super.initState();
-    for (var i = 0; i < 30; i++) {
-      Admin admin = Admin("ali$i", "Veli$i", "ali$i@gmail.com",
-          "${i}5439562812", UserType.admin);
-      admin.register();
+
+    if (admins.isEmpty) {
+      for (var i = 0; i < 30; i++) {
+        Admin admin = Admin("admin$i", "admin$i", "admin$i@gmail.com",
+            "${i}00 000 0000", UserType.admin);
+        admin.register();
+      }
     }
   }
 

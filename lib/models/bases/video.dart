@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field
-
 import 'dart:math';
 
 import 'package:movie_app/enums/genres.dart';

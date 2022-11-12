@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/enums/genres.dart';
 import 'package:movie_app/models/bases/video.dart';
-import 'package:movie_app/models/member.dart';
 import 'package:movie_app/models/movies.dart';
 import 'package:movie_app/theme/theme.dart';
 
@@ -30,9 +29,12 @@ class _MovieWidgetState extends State<MovieWidget> {
   @override
   void initState() {
     super.initState();
-    for (var i = 0; i < 30; i++) {
-      Movie movie = Movie("Movie$i", "Summary$i", Genres.adventure);
-      movie.register();
+
+    if (movies.isEmpty) {
+      for (var i = 0; i < 30; i++) {
+        Movie movie = Movie("Movie$i", "Summary$i", Genres.adventure);
+        movie.register();
+      }
     }
   }
 

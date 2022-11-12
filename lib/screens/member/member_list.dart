@@ -31,10 +31,12 @@ class _MemberWidgetState extends State<MemberWidget> {
   @override
   void initState() {
     super.initState();
-    for (var i = 0; i < 30; i++) {
-      Member member = Member("ali$i", "Veli$i", "ali$i@gmail.com",
-          "${i}5439562812", UserType.member);
-      member.register();
+    if (members.isEmpty) {
+      for (var i = 0; i < 30; i++) {
+        Member member = Member("member$i", "member$i", "member$i@gmail.com",
+            "${i}00 000 0000", UserType.member);
+        member.register();
+      }
     }
   }
 

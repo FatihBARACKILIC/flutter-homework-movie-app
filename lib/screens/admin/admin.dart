@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, todo
-
 import 'package:flutter/material.dart';
 import 'package:movie_app/enums/gender.dart';
 import 'package:movie_app/enums/user_type.dart';
@@ -207,6 +205,5 @@ class _AdminScreenState extends State<AdminScreen> {
       _controllerPhoneNumber.clear();
       _gender = Gender.custom;
     });
-    print("admin: ${admin.getUserInfos()}");
   }
 }
