@@ -11,16 +11,14 @@ var serries = <Series>[];
 class Video {
   final String _id = Random().nextInt(2147483648).toRadixString(32);
   String name;
-  DateTime publishTime;
   String image;
   String summary;
   List<String> stars;
   List<String> categories;
   String addPersonId;
-  final DateTime _registerDate = DateTime.now();
 
-  Video(this.name, this.publishTime, this.image, this.summary, this.stars,
-      this.categories, this.addPersonId);
+  Video(this.name, this.image, this.summary, this.stars, this.categories,
+      this.addPersonId);
 
   String get id => _id;
 
@@ -31,7 +29,6 @@ class Video {
   List getInfos() {
     return [
       name,
-      publishTime,
       image,
       summary,
       stars,

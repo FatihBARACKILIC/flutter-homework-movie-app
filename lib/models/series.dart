@@ -1,8 +1,8 @@
 import 'bases/video.dart';
 
 class Series extends Video {
-  Series(super.name, super.publishTime, super.image, super.summary, super.stars,
-      super.categories, super.addPersonId);
+  Series(super.name, super.image, super.summary, super.stars, super.categories,
+      super.addPersonId);
 
   @override
   bool register() {

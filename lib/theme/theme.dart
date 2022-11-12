@@ -11,6 +11,6 @@ ThemeData theme(BuildContext context) {
           decorationColor: Colors.white,
           displayColor: Colors.white,
         ),
-    // hintColor: Colors.white,
+    hintColor: Colors.white,
   );
 }

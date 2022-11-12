@@ -20,7 +20,6 @@ class Member extends Person {
     bool eMail = false,
     bool phoneNumber = false,
     bool gender = false,
-    bool dateOfBirth = false,
     bool userType = false,
   }) {
     var memberInfos = [];
@@ -30,17 +29,16 @@ class Member extends Person {
     if (eMail) memberInfos.add(this.eMail);
     if (phoneNumber) memberInfos.add(this.phoneNumber);
     if (gender) memberInfos.add(this.gender.name);
-    if (dateOfBirth) memberInfos.add(this.dateOfBirth);
     if (userType) memberInfos.add(this.userType.name);
 
     return memberInfos;
   }
 
   @override
-  Member register() {
+  bool register() {
     try {
       members.add(this);
-      return this;
+      return true;
     } catch (e) {
       throw "Couldn't register the Member.";
     }
@@ -54,7 +52,6 @@ class Member extends Person {
     String? eMail,
     String? phoneNumber,
     Gender? gender,
-    DateTime? dateOfBirth,
   }) {
     try {
       for (var member in members) {
@@ -64,7 +61,6 @@ class Member extends Person {
           member.eMail = eMail ?? this.eMail;
           member.phoneNumber = phoneNumber ?? this.phoneNumber;
           member.gender = gender ?? this.gender;
-          member.dateOfBirth = dateOfBirth ?? this.dateOfBirth;
           return true;
         }
       }
@@ -74,18 +70,11 @@ class Member extends Person {
     }
   }
 
-  static bool remove(String id) {
-    bool result = false;
+  @override
+  bool remove() {
     try {
-      for (var member in members) {
-        members.remove(member);
-        if (member.id != id) {
-          members.add(member);
-        } else {
-          result = true;
-        }
-      }
-      return result;
+      members.remove(this);
+      return true;
     } catch (e) {
       throw "Couldn't remove the Member.";
     }

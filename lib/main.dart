@@ -1,13 +1,7 @@
-// ignore_for_file: avoid_print, unused_import
-
 import 'package:flutter/material.dart';
-import 'package:movie_app/widgets/menu_buttons.dart';
-import 'package:movie_app/enums/gender.dart';
-import 'package:movie_app/enums/user_type.dart';
-import 'package:movie_app/models/admin.dart';
-import 'package:movie_app/models/bases/person.dart';
-import 'package:movie_app/models/member.dart';
 import 'package:movie_app/screens/admin/admin.dart';
+import 'package:movie_app/screens/admin/admin_list.dart';
+import 'package:movie_app/widgets/menu_buttons.dart';
 import 'package:movie_app/screens/member/member.dart';
 import 'package:movie_app/screens/movie/movie.dart';
 import 'package:movie_app/theme/theme.dart';
@@ -64,7 +58,9 @@ class _MovieAppState extends State<MovieApp> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                      // TODO:
                       builder: (context) => const AdminScreen(),
+                      // builder: (context) => const AdminList(),
                     ),
                   );
                 },

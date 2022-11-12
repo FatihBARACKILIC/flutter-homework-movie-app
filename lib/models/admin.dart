@@ -25,7 +25,6 @@ class Admin extends Person {
       eMail,
       phoneNumber,
       gender.name,
-      dateOfBirth.toString(),
       userType.name,
       registerTime.toString(),
     ];
@@ -39,7 +38,6 @@ class Admin extends Person {
     bool eMail = false,
     bool phoneNumber = false,
     bool gender = false,
-    bool dateOfBirth = false,
     bool userType = false,
     bool registerTime = false,
   }) {
@@ -51,7 +49,6 @@ class Admin extends Person {
     if (eMail) adminInfos.add(this.eMail);
     if (phoneNumber) adminInfos.add(this.phoneNumber);
     if (gender) adminInfos.add(this.gender.name);
-    if (dateOfBirth) adminInfos.add(this.dateOfBirth);
     if (userType) adminInfos.add(this.userType.name);
     if (registerTime) adminInfos.add(this.registerTime);
 
@@ -59,10 +56,10 @@ class Admin extends Person {
   }
 
   @override
-  Person register() {
+  bool register() {
     try {
       admins.add(this);
-      return this;
+      return true;
     } catch (e) {
       throw "Couldn't register the Admin.";
     }
@@ -76,7 +73,6 @@ class Admin extends Person {
     String? eMail,
     String? phoneNumber,
     Gender? gender,
-    DateTime? dateOfBirth,
     UserType? userType,
   }) {
     try {
@@ -87,7 +83,6 @@ class Admin extends Person {
           admin.eMail = eMail ?? admin.eMail;
           admin.phoneNumber = phoneNumber ?? admin.phoneNumber;
           admin.gender = gender ?? admin.gender;
-          admin.dateOfBirth = dateOfBirth ?? admin.dateOfBirth;
           admin.userType = userType ?? admin.userType;
           if (admin.userType == UserType.member) {
             admins.remove(admin);
@@ -98,7 +93,7 @@ class Admin extends Person {
               admin.phoneNumber,
               admin.userType,
             );
-            member.dateOfBirth = admin.dateOfBirth;
+            member.register();
           }
           return true;
         }
@@ -109,18 +104,12 @@ class Admin extends Person {
     }
   }
 
-  static bool remove(String id) {
-    bool result = false;
+  @override
+  bool remove() {
+    // bool result = false;
     try {
-      for (var admin in admins) {
-        admins.remove(admin);
-        if (admin.id != id) {
-          admins.add(admin);
-        } else {
-          result = true;
-        }
-      }
-      return result;
+      admins.remove(this);
+      return true;
     } catch (e) {
       throw "Couldn't remove the Admin.";
     }

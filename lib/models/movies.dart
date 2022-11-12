@@ -1,8 +1,8 @@
 import 'package:movie_app/models/bases/video.dart';
 
 class Movie extends Video {
-  Movie(super.movieName, super.publishTime, super.image, super.summary,
-      super.stars, super.categories, super.addPersonId);
+  Movie(super.movieName, super.image, super.summary, super.stars,
+      super.categories, super.addPersonId);
 
   @override
   bool register() {

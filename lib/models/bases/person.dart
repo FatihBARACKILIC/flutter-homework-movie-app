@@ -6,8 +6,8 @@ import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/admin.dart';
 import 'package:movie_app/models/member.dart';
 
-var admins = <Admin>[];
-var members = <Member>[];
+List<Admin> admins = <Admin>[];
+List<Member> members = <Member>[];
 
 abstract class Person {
   final String _id = Random().nextInt(2147483648).toRadixString(32);
@@ -48,14 +48,13 @@ abstract class Person {
     bool eMail = false,
     bool phoneNumber = false,
     bool gender = false,
-    bool dateOfBirth = false,
     bool userType = false,
   }) {
     return [];
   }
 
-  Person register() {
-    return this;
+  bool register() {
+    return true;
   }
 
   bool update({
@@ -65,12 +64,11 @@ abstract class Person {
     String? eMail,
     String? phoneNumber,
     Gender? gender,
-    DateTime? dateOfBirth,
   }) {
     return true;
   }
 
-  static bool remove(String id) {
-    return false;
+  bool remove() {
+    return true;
   }
 }
