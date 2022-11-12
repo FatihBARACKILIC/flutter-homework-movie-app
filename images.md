@@ -1,6 +1,6 @@
 # Images
 
-## Bazı Sayfaların tasarımı olduğu için resimlerini eklemedim
+## Bazı Sayfaların tasarımı aynı olduğu için resimlerini eklemedim
 
 ![Main Screen](./assets/01-main-screen.png)
 ![Add Admin](./assets/02-add-admin.png)
