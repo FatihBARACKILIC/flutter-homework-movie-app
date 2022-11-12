@@ -1,13 +1,12 @@
 import 'bases/video.dart';
 
 class Series extends Video {
-  Series(super.name, super.image, super.summary, super.stars, super.categories,
-      super.addPersonId);
+  Series(super.movieName, super.summary, super.categories);
 
   @override
   bool register() {
     try {
-      serries.add(this);
+      series.add(this);
       return true;
     } catch (e) {
       throw "Couldn't register the Series";
@@ -15,18 +14,10 @@ class Series extends Video {
   }
 
   @override
-  bool remove(String id) {
-    bool result = false;
+  bool remove() {
     try {
-      for (var s in series) {
-        series.remove(s);
-        if (s.id != id) {
-          series.add(s);
-        } else {
-          result = true;
-        }
-      }
-      return result;
+      series.remove(this);
+      return true;
     } catch (e) {
       throw "Couldn't remove the Series.";
     }

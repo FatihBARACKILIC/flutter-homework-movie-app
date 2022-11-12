@@ -2,23 +2,20 @@
 
 import 'dart:math';
 
+import 'package:movie_app/enums/genres.dart';
 import 'package:movie_app/models/movies.dart';
 import 'package:movie_app/models/series.dart';
 
-var series = <Movie>[];
-var serries = <Series>[];
+var movies = <Movie>[];
+var series = <Series>[];
 
 class Video {
   final String _id = Random().nextInt(2147483648).toRadixString(32);
   String name;
-  String image;
   String summary;
-  List<String> stars;
-  List<String> categories;
-  String addPersonId;
+  Genres categories;
 
-  Video(this.name, this.image, this.summary, this.stars, this.categories,
-      this.addPersonId);
+  Video(this.name, this.summary, this.categories);
 
   String get id => _id;
 
@@ -29,14 +26,12 @@ class Video {
   List getInfos() {
     return [
       name,
-      image,
       summary,
-      stars,
       categories,
     ];
   }
 
-  bool remove(String id) {
+  bool remove() {
     return true;
   }
 }

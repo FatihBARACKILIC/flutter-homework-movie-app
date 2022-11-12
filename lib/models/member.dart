@@ -1,7 +1,4 @@
-// ignore_for_file: avoid_print, unused_import
-
 import 'package:movie_app/enums/gender.dart';
-import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/bases/person.dart';
 
 class Member extends Person {
