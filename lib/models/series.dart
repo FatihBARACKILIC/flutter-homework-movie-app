@@ -1,5 +1,6 @@
 import 'package:movie_app/models/bases/video.dart';
 
+/// Dizi modeli
 class Series extends Video {
   Series(super.movieName, super.summary, super.categories);
 

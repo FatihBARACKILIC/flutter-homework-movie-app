@@ -1,6 +1,7 @@
 import 'package:movie_app/enums/gender.dart';
 import 'package:movie_app/models/bases/person.dart';
 
+/// Üye modeli
 class Member extends Person {
   Member(
     super.firstName,

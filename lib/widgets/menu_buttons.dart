@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Ana ekrandaki button'un tasarımının oluştuğu sayfa
 class MenuButtons extends StatelessWidget {
   const MenuButtons({
     super.key,

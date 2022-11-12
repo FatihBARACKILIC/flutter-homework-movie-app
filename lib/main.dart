@@ -30,6 +30,7 @@ class MovieApp extends StatefulWidget {
   State<StatefulWidget> createState() => _MovieAppState();
 }
 
+/// Ana ekran
 class _MovieAppState extends State<MovieApp> {
   @override
   Widget build(BuildContext context) {
@@ -51,6 +52,7 @@ class _MovieAppState extends State<MovieApp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <MenuButtons>[
+              /// Buton kodu çok ucun olduğu için widget olarak parçaladım.
               MenuButtons(
                 cb: () {
                   Navigator.push(

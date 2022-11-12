@@ -4,6 +4,7 @@ import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/admin.dart';
 import 'package:movie_app/screens/admin/admin_list.dart';
 
+/// Yeni adminlerin eklendiği sayfa
 class AdminScreen extends StatefulWidget {
   const AdminScreen({super.key});
 

@@ -7,7 +7,9 @@ import 'package:movie_app/models/series.dart';
 var movies = <Movie>[];
 var series = <Series>[];
 
+/// Dizi ve film sayfaları bu class tarafından alınmıştır
 class Video {
+  /// Her kayıtta otomatik id oluşturur
   final String _id = Random().nextInt(2147483648).toRadixString(32);
   String name;
   String summary;

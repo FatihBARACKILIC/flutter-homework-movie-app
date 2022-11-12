@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Bazı sayfalara theme eklemem gerekti o yüzden onu da ThemeData geri dönen
+/// bir fonksiyona böldüm
 ThemeData theme(BuildContext context) {
   const Color darkColor = Color.fromRGBO(13, 17, 23, 1);
 

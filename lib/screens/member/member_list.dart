@@ -4,6 +4,7 @@ import 'package:movie_app/models/member.dart';
 import 'package:movie_app/models/bases/person.dart';
 import 'package:movie_app/theme/theme.dart';
 
+/// Üyelerin listelendiği sayfa
 class MemberList extends StatelessWidget {
   const MemberList({super.key});
 
@@ -31,13 +32,15 @@ class _MemberWidgetState extends State<MemberWidget> {
   @override
   void initState() {
     super.initState();
-    if (members.isEmpty) {
-      for (var i = 0; i < 30; i++) {
-        Member member = Member("member$i", "member$i", "member$i@gmail.com",
-            "${i}00 000 0000", UserType.member);
-        member.register();
-      }
-    }
+
+    /// Sayfa boş olduğunda otomatik olarak veri oluşturur
+    // if (members.isEmpty) {
+    //   for (var i = 0; i < 30; i++) {
+    //     Member member = Member("member$i", "member$i", "member$i@gmail.com",
+    //         "${i}00 000 0000", UserType.member);
+    //     member.register();
+    //   }
+    // }
   }
 
   @override
@@ -104,6 +107,7 @@ class _MemberWidgetState extends State<MemberWidget> {
     );
   }
 
+  /// Popup detay sayfası
   Widget _detailPage(BuildContext context, Member info) {
     return AlertDialog(
       backgroundColor: const Color.fromRGBO(13, 17, 23, 1),

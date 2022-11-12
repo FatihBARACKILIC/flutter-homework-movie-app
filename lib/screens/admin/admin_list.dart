@@ -4,6 +4,7 @@ import 'package:movie_app/models/admin.dart';
 import 'package:movie_app/models/bases/person.dart';
 import 'package:movie_app/theme/theme.dart';
 
+/// Adminlerin listelendiği sayfa
 class AdminList extends StatelessWidget {
   const AdminList({super.key});
 
@@ -32,13 +33,14 @@ class _AdminWidgetState extends State<AdminWidget> {
   void initState() {
     super.initState();
 
-    if (admins.isEmpty) {
-      for (var i = 0; i < 30; i++) {
-        Admin admin = Admin("admin$i", "admin$i", "admin$i@gmail.com",
-            "${i}00 000 0000", UserType.admin);
-        admin.register();
-      }
-    }
+    /// Sayfa boş olduğunda otomatik olarak veri oluşturur
+    // if (admins.isEmpty) {
+    //   for (var i = 0; i < 30; i++) {
+    //     Admin admin = Admin("admin$i", "admin$i", "admin$i@gmail.com",
+    //         "${i}00 000 0000", UserType.admin);
+    //     admin.register();
+    //   }
+    // }
   }
 
   @override
@@ -105,6 +107,7 @@ class _AdminWidgetState extends State<AdminWidget> {
     );
   }
 
+  /// Popup detay sayfası
   Widget _detailPage(BuildContext context, Admin info) {
     return AlertDialog(
       backgroundColor: const Color.fromRGBO(13, 17, 23, 1),

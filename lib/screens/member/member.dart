@@ -4,6 +4,7 @@ import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/member.dart';
 import 'package:movie_app/screens/member/member_list.dart';
 
+/// Yeni üyelerin eklendiği sayfa
 class MemberScreen extends StatefulWidget {
   const MemberScreen({super.key});
 

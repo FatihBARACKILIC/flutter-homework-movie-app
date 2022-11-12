@@ -7,7 +7,9 @@ import 'package:movie_app/models/member.dart';
 List<Admin> admins = <Admin>[];
 List<Member> members = <Member>[];
 
+/// Üye ve admin sayfaları bu class tarafından alınmıştır
 abstract class Person {
+  /// Her kayıtta otomatik id oluşturur
   final String _id = Random().nextInt(2147483648).toRadixString(32);
   String firstName;
   String lastName;

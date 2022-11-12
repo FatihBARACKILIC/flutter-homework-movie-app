@@ -3,6 +3,7 @@ import 'package:movie_app/enums/user_type.dart';
 import 'package:movie_app/models/bases/person.dart';
 import 'package:movie_app/models/member.dart';
 
+/// Admin modeli
 class Admin extends Person {
   Admin(
     super.firstName,

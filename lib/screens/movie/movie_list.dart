@@ -4,6 +4,7 @@ import 'package:movie_app/models/bases/video.dart';
 import 'package:movie_app/models/movies.dart';
 import 'package:movie_app/theme/theme.dart';
 
+/// Filmlerin listelendiği sayfa
 class MovieList extends StatelessWidget {
   const MovieList({super.key});
 
@@ -30,12 +31,13 @@ class _MovieWidgetState extends State<MovieWidget> {
   void initState() {
     super.initState();
 
-    if (movies.isEmpty) {
-      for (var i = 0; i < 30; i++) {
-        Movie movie = Movie("Movie$i", "Summary$i", Genres.adventure);
-        movie.register();
-      }
-    }
+    /// Sayfa boş olduğunda otomatik olarak veri oluşturur
+    // if (movies.isEmpty) {
+    //   for (var i = 0; i < 30; i++) {
+    //     Movie movie = Movie("Movie$i", "Summary$i", Genres.adventure);
+    //     movie.register();
+    //   }
+    // }
   }
 
   @override
@@ -102,6 +104,7 @@ class _MovieWidgetState extends State<MovieWidget> {
     );
   }
 
+  /// Popup detay sayfası
   Widget _detailPage(BuildContext context, Movie info) {
     return AlertDialog(
       backgroundColor: const Color.fromRGBO(13, 17, 23, 1),

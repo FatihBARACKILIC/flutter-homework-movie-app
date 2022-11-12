@@ -3,6 +3,7 @@ import 'package:movie_app/enums/genres.dart';
 import 'package:movie_app/models/movies.dart';
 import 'package:movie_app/screens/movie/movie_list.dart';
 
+/// Yeni filmlerin eklendiği sayfa
 class MovieScreen extends StatefulWidget {
   const MovieScreen({super.key});
 

@@ -1,16 +1,17 @@
-# movie_app
+# Week - 2
 
-A new Flutter project.
+## Homework
 
-## Getting Started
+OOP ile bir proje geliştirmek
 
-This project is a starting point for a Flutter application.
+## Homework Description
 
-A few resources to get you started if this is your first Flutter project:
+OOP ile MVVM mimarisi temel alınarak basit bir film listesi oluşturabileceğiniz platform. Üye ve admin ekleme, silme işlemleri kullanılabilir. Güncelleme fonksiyonu var ama kullanıma açılmadı. Ayrıca, Film ekleme ve silme işlemleri kullanılabilir. Dizi işlemlerinin fonksiyonu var ama kullanıma açılmadı.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Project Pictures
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Resimler](images.md)
+
+## Author
+
+```Fatih BARAÇKILIÇ```

@@ -1,5 +1,6 @@
 import 'package:movie_app/models/bases/video.dart';
 
+/// Film modeli
 class Movie extends Video {
   Movie(super.movieName, super.summary, super.categories);
 
