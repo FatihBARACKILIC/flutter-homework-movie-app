@@ -10,7 +10,7 @@ class MovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Member List",
+      title: "Movie List",
       debugShowCheckedModeBanner: false,
       theme: theme(context),
       home: const MovieWidget(),
@@ -65,7 +65,7 @@ class _MovieWidgetState extends State<MovieWidget> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             leading: const Icon(
-                              Icons.person,
+                              Icons.movie,
                               size: 40,
                             ),
                             iconColor: Colors.white,
@@ -105,7 +105,7 @@ class _MovieWidgetState extends State<MovieWidget> {
   Widget _detailPage(BuildContext context, Movie info) {
     return AlertDialog(
       backgroundColor: const Color.fromRGBO(13, 17, 23, 1),
-      title: const Center(child: Text('Member Detail')),
+      title: const Center(child: Text('Movie Detail')),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
